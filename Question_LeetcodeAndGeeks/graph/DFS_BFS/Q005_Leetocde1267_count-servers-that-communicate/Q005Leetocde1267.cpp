@@ -48,14 +48,13 @@ int method01(vector<vector<int>> &grid)
 
 int method02(vector<vector<int>> &grid)
 {
-     std::ios_base::sync_with_stdio(false);
+    std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
     int n = grid.size();
     int m = grid[0].size();
     vector<int> row(n, 0);
     vector<int> col(m, 0);
-
 
     int total_server = 0;
     for (int i = 0; i < n; i++)
@@ -64,7 +63,7 @@ int method02(vector<vector<int>> &grid)
         {
             row[i] += grid[i][j];
             col[j] += grid[i][j];
-            total_server+=grid[i][j];
+            total_server += grid[i][j];
         }
     }
 
