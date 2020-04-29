@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Q004Leetcode642",
+            "request": "launch",
+            "mainClass": "Q004Leetcode642",
+            "projectName": "Question_LeetcodeAndGeeks_ab9c4e1b"
+        },
+        {
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
