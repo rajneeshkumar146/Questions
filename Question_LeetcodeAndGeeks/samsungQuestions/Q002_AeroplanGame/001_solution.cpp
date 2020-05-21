@@ -65,9 +65,7 @@ void solve()
     for (int i = n - 1; i > 0; i--)
     {
         blastBoard(i, n);
-        dfs(n, 1, 0);
         dfs(n, 2, 0);
-        dfs(n, 3, 0);
         unBlastBoard(i, n);
     }
     cout << maxCoins << endl;

@@ -39,7 +39,7 @@ int height(TreeNode *node)
 TreeNode *lcaDeepestLeaves_(TreeNode *root, int depth)
 {
     if (root == nullptr)
-        return;
+        return nullptr;
 
     if (depth == 0)
         return root;
@@ -56,7 +56,5 @@ TreeNode *lcaDeepestLeaves(TreeNode *root)
     if (root == nullptr)
         return nullptr;
     int h = height(root);
-    unordered_map<TreeNode *, int> map;
-    lcaDeepestLeaves_(root, map, h);
-    return (lca->left && lca->right) ? lca : !lca->left ? lca->left ? lca->right;
+    return lcaDeepestLeaves_(root, h);
 }
