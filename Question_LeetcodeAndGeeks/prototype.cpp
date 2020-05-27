@@ -10,8 +10,8 @@ using namespace std;
 
 auto speedUp = []() {
     std::ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
     return nullptr;
 }();
 
@@ -31,9 +31,14 @@ void display2D(vii &arr)
 
 void solve()
 {
+    
 }
+
 int main()
 {
-    solve();
+    int t;
+    cin >> t;
+    while (t-- > 0)
+        solve();
     return 0;
 }
