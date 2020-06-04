@@ -3,16 +3,17 @@
 #include <vector>
 #include <string>
 
-#define vi vector<int>
-#define vii vector<vi>
-
 using namespace std;
 
-auto speedUp = []() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::cout.tie(nullptr);
-    return nullptr;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+
+
+static const auto magic = []() {
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
+  return nullptr;
 }();
 
 void display(vi &arr)
