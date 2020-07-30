@@ -6,7 +6,8 @@
 using namespace std;
 
 //Recursive=================================================================================
-int targetSum_01(vector<int> &nums, int tar, int idx, vector<vector<int>> &dp)
+vector<vector<int>> dp;
+int targetSum_01(vector<int> &nums, int tar, int idx)
 {
     if (idx == nums.size() || tar == 0)
         return dp[idx][tar] = tar == 0;
@@ -15,8 +16,8 @@ int targetSum_01(vector<int> &nums, int tar, int idx, vector<vector<int>> &dp)
 
     bool res = false;
     if (tar - nums[idx] >= 0)
-        res = res || targetSum(nums, tar - nums[idx], idx + 1, dp) == 1;
-    res = res || targetSum(nums, tar, idx + 1, dp) == 1;
+        res = res || targetSum(nums, tar - nums[idx], idx + 1) == 1;
+    res = res || targetSum(nums, tar, idx + 1) == 1;
 
     return dp[idx][tar] = res;
 }
@@ -43,8 +44,8 @@ bool canPartition(vector<int> &nums)
     for (int ele : nums)
         sum += ele;
 
-    // dp.resize(nums.size() + 1, vector<int>(sum / 2 + 1, -1));
-    // return !(sum & 1) && targetSum_01(nums, sum / 2, 0) > 0;
+    dp.resize(nums.size() + 1, vector<int>(sum / 2 + 1, -1));
+    return !(sum & 1) && targetSum_01(nums, sum / 2, 0) > 0;
 
     return !(sum & 1) && targetSum_02_1dDP(nums, (sum >> 1));
 }

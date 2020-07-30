@@ -33,7 +33,7 @@ void Build()
 long query(int li, int ri)
 {
     long sum = 0;
-    while (li < ri && li % bs != 0 && li != 0)
+    while (li <= ri && li % bs != 0)
         sum += arr[li++];
 
     while (li + bs <= ri)
