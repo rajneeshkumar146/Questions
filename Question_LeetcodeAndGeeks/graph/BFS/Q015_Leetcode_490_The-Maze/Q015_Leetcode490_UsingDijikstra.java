@@ -1,9 +1,13 @@
 import java.util.*;
 
 class Solution {
-    public int shortestDistance(int[][] maze, int[] start, int[] destination) {
+    public boolean hasPath(int[][] maze, int[] start, int[] destination) {
+
         if (start[0] == destination[0] && start[1] == destination[1])
-            return 0;
+            return true;
+
+
+            
         int[][] dir = { { 1, 0 }, { 0, -1 }, { 0, 1 }, { -1, 0 } };
 
         class pair {
@@ -49,10 +53,10 @@ class Solution {
                 distance[fr][fc] = l;
                 que.add(new pair(fr, fc, l));
                 if (fr == destination[0] && fc == destination[1])
-                    return l;
+                    return true;
             }
         }
 
-        return -1;
+        return false;
     }
 }
