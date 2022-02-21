@@ -60,6 +60,17 @@ int mcs_tabu(int N, vi &cost, vi &dp)
     return dp[N];
 }
 
+int mcs_opti(int N,vi& cost){
+    int a = cost[0], b = cost[1];
+    for(int n = 2; n < N;n++){
+        int c = min(a,b) + cost[n];
+        a = b;
+        b = c;
+    }
+
+    return min(a,b);
+}
+
 int minCostClimbingStairs(vector<int> &cost)
 {
     int n = cost.size();
